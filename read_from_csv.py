@@ -1,10 +1,21 @@
 import csv
 
-with open ('names.csv','r',) as csv_file:
+#open a csv file
+with open ('names.csv','r', newline='') as csv_file:
 	csv_reader = csv.reader(csv_file)
 
-	# print(csv_reader)
-	next (csv_reader)
-	for line in csv_reader:
-		print(line[2])
+	# for line in csv_reader:
+	# 	print (line)
+
+	# create csv to write
+	with open ('new_names.csv','w',  newline='') as new_csv_file:
+		csv_writer=csv.writer(new_csv_file)
+
+		for line in csv_reader:
+			csv_writer.writerow(line)
+
+
+	# next (csv_reader)
+	# for line in csv_reader:
+	# 	print(line[2])
 
